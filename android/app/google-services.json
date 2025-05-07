@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "991346693109",
+    "project_id": "fir-cli-project-4826e",
+    "storage_bucket": "fir-cli-project-4826e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991346693109:android:0d19f4fe6f34c5f0a046bc",
+        "android_client_info": {
+          "package_name": "com.example.applications_dao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991346693109-pvtq3bimr9kpk4kb388tp2u02k4ao35r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw-7299_yrq4tU5RptjSpisd8nQ9HIZ8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991346693109-pvtq3bimr9kpk4kb388tp2u02k4ao35r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "991346693109-3npncvjf580tfi82pqog0du9jcalc7sg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firabaseAuth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
