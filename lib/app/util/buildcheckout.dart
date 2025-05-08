@@ -33,8 +33,8 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Cart'),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(105, 151, 151, 151),
+        foregroundColor: const Color.fromARGB(70, 0, 0, 0),
         elevation: 1,
         leading: IconButton(
           onPressed: () => Navigator.pushReplacement(

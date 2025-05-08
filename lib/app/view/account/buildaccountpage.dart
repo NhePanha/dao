@@ -63,29 +63,11 @@ class AccountPage extends StatelessWidget {
                   _buildProfileTile('Notifications', Icons.notifications_none),
                   _buildProfileTile('Help', Icons.help_outline),
                   _buildProfileTile('About', Icons.info_outline),
+                  _buildProfileTile('Log out', Icons.info_outline),
                 ],
               ),
             ),
-
             // Logout Button
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // Add logout functionality here
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFF4F4F4),
-                  foregroundColor: Colors.green,
-                  minimumSize: const Size.fromHeight(50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                icon: const Icon(Icons.logout),
-                label: const Text('Log Out', style: TextStyle(fontSize: 16)),
-              ),
-            ),
           ],
         ),
       ),

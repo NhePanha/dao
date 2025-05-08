@@ -2,6 +2,7 @@ import 'package:applications_dao/app/model/product_list.dart';
 import 'package:applications_dao/app/util/message.dart';
 import 'package:applications_dao/app/view/account/buildaccountpage.dart';
 import 'package:applications_dao/app/view/cart/cartpage.dart';
+import 'package:applications_dao/app/view/detailpage.dart/detailpage.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -65,6 +66,7 @@ class _MainScreenState extends State<MainScreen> {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -207,7 +209,7 @@ class _MainScreenState extends State<MainScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(product.price,
+                  Text("${product.price}",
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                   Row(
                     children: [
@@ -234,7 +236,8 @@ class _MainScreenState extends State<MainScreen> {
                           onPressed: () {
                             Showmessage(context, "please check cart thank you",
                                 icon: Icons.shopify,
-                                backgroundColor: Colors.blue);
+                                backgroundColor:
+                                    const Color.fromARGB(150, 89, 89, 89));
                             addToCart(product);
                           },
                         ),

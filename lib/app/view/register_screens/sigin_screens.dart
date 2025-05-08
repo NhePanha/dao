@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
   Future<void> loginUser(BuildContext context) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -16,10 +15,12 @@ class LoginScreen extends StatelessWidget {
       );
       Showmessage(context, "Login successfuly",
           icon: Icons.flash_auto_rounded, backgroundColor: Colors.blue);
-      // Navigate to the next screen after successful login
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => MainScreen()));
     } on FirebaseAuthException catch (e) {
-      Showmessage(context, "Login successfuly",
-          icon: Icons.flash_auto_rounded, backgroundColor: Colors.red);
+      Showmessage(context, "can't login please try again",
+          icon: Icons.error,
+          backgroundColor: const Color.fromARGB(255, 255, 93, 82));
     }
   }
 
@@ -72,20 +73,17 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainScreen()));
+                loginUser(context);
               },
               child: Text('Log In'),
             ),
             SizedBox(height: 16),
             TextButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => SignupScreen()),
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignupScreen()));
               },
-              child: Text(
+              child: const Text(
                 "Don't have an account? Signup",
                 style: TextStyle(color: Colors.green),
               ),
