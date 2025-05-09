@@ -1,6 +1,5 @@
 import 'package:applications_dao/app/model/product_list.dart';
 import 'package:applications_dao/app/util/bottomsheet.dart';
-import 'package:applications_dao/app/util/message.dart';
 import 'package:applications_dao/app/view/home/hoempage.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +52,7 @@ class _CartPageState extends State<CartPage> {
           },
           icon: const Icon(Icons.arrow_back),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: const Text("Your Cart"),
       ),
       body: Column(
@@ -65,20 +64,39 @@ class _CartPageState extends State<CartPage> {
                     itemCount: cartItems.length,
                     itemBuilder: (context, index) {
                       var product = cartItems[index];
-                      return ListTile(
-                        leading: Image.asset(product.image, width: 50),
-                        title: Text(product.title),
-                        subtitle: Text("\$${product.price}"),
-                        trailing: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              cartItems.removeAt(index);
-                            });
-                          },
-                          icon: const Icon(
-                            Icons.delete,
-                            color: Colors.red,
-                            size: 26,
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Card(
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          shadowColor: const Color.fromARGB(255, 255, 255, 255),
+                          child: Container(
+                            width: 100,
+                            height: 100,
+                            child: ListTile(
+                              leading: Image.asset(product.image, width: 100),
+                              title: Text(
+                                product.title,
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              subtitle: Text(
+                                "\$${product.price}\n ${product.subtitle}",
+                                style: TextStyle(
+                                  color: const Color.fromARGB(137, 0, 47, 255),
+                                ),
+                              ),
+                              trailing: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    cartItems.removeAt(index);
+                                  });
+                                },
+                                icon: const Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       );

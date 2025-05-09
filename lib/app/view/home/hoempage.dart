@@ -62,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
       const Center(child: Text('Explore Page')),
       CartPage(cartItems: cartItems),
       buildFavoritePage(),
-      AccountPage(),
+      AccountPage(context),
     ];
 
     return Scaffold(

@@ -16,7 +16,7 @@ class _BottomSheetExampleState extends State<BottomSheetExample> {
     return Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(245, 53, 178, 57),
+          backgroundColor: const Color.fromARGB(255, 235, 235, 235),
           padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 10),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
@@ -26,7 +26,7 @@ class _BottomSheetExampleState extends State<BottomSheetExample> {
         onPressed: () {
           showModalBottomSheet<void>(
             anchorPoint: Offset(0, 50),
-            backgroundColor: const Color.fromARGB(60, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(245, 255, 255, 255),
             context: context,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
@@ -104,7 +104,8 @@ class _BottomSheetExampleState extends State<BottomSheetExample> {
                     const SizedBox(height: 40),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
+                        backgroundColor:
+                            const Color.fromARGB(255, 198, 198, 198),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -116,7 +117,7 @@ class _BottomSheetExampleState extends State<BottomSheetExample> {
                             context, "Payment Successfully thank so much",
                             icon: Icons.shopify,
                             backgroundColor:
-                                const Color.fromARGB(176, 0, 118, 31));
+                                const Color.fromARGB(175, 204, 204, 204));
                       },
                       child: const Center(
                         child: Text(

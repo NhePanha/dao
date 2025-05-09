@@ -17,8 +17,17 @@ class OnboardingScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
-              Image.asset('assets/images/logo.png', height: 100),
-              SizedBox(height: 40),
+              Image(
+                image: AssetImage(
+                  "assets/images/logo.png",
+                ),
+                height: 100,
+              ),
+              // Image.asset("assets/images/logo.png", height: 100),
+              // Image(
+              //     image: NetworkImage(
+              //         "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D")),
+              // SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: ElevatedButton(

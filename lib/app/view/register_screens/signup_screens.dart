@@ -28,7 +28,8 @@ class _SignupScreenState extends State<SignupScreen> {
       Showmessage(context, "Sign Up Successfuly",
           icon: Icons.flash_auto_rounded,
           backgroundColor: const Color.fromARGB(255, 33, 243, 121));
-      Navigator.pop(context);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
     } on FirebaseAuthException catch (e) {
       Showmessage(context, "Can't Sign Up Please Try Again",
           icon: Icons.error,
@@ -38,73 +39,78 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/logo.png', height: 100),
-            const SizedBox(height: 16),
-            const Text('Create Account',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            const Text(
-                'Fill Your Information Below Or\nRegister with your social account',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey)),
-            const SizedBox(height: 24),
-            TextField(
-              controller: username,
-              decoration: InputDecoration(
-                  labelText: 'Name',
-                  hintText: 'your name',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12))),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'your email',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12))),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: '******',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12))),
-            ),
-            const SizedBox(height: 24),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/logo.png', height: 100),
+                const SizedBox(height: 16),
+                const Text('Create Account',
+                    style:
+                        TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 8),
+                const Text(
+                    'Fill Your Information Below Or\nRegister with your social account',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+                const SizedBox(height: 24),
+                TextField(
+                  controller: username,
+                  decoration: InputDecoration(
+                      labelText: 'Name',
+                      hintText: 'your name',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12))),
                 ),
-              ),
-              onPressed: () {
-                SignUp();
-              },
-              child: const Text('Sing Up'),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                      labelText: 'Email',
+                      hintText: 'your email',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12))),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      labelText: 'Password',
+                      hintText: '******',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12))),
+                ),
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    minimumSize: const Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  onPressed: () {
+                    SignUp();
+                  },
+                  child: const Text('Sign Up'),
+                ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text(
+                    "Already have an account? Sign In",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                )
+              ],
             ),
-            const SizedBox(height: 16),
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text(
-                "Already have an account? Signup",
-                style: TextStyle(color: Colors.green),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
